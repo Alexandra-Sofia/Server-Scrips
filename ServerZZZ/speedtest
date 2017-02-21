@@ -1,0 +1,5 @@
+wget -O speedtest-cli https://raw.github.com/sivel/speedtest-cli/master/speedtest.py
+chmod +x speedtest-cli
+./speedtest-cli
+
+rm speedtest-cli

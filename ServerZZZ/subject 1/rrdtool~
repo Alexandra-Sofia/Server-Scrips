@@ -1,0 +1,9 @@
+yum install rrdtool
+
+find / -name rrdtool
+
+/opt/rrdtool-1.6.0/bindings/perl-shared/
+
+find / -name *RRD*
+
+/opt/rrdtool-1.6.0/bindings/perl-shared/

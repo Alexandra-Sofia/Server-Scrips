@@ -1,0 +1,18 @@
+213.16.167.111  root
+
+ssh root@213.16.167.111
+
+lAIHv3N5
+
+tomcat over apache
+not connected
+
+/usr/local/tomcat/current
+
+/usr/local/tomcat/current/webapps/ROOT
+
+/usr/local/tomcat/apache-tomcat-7.0.42/webapps/ROOT/WEB-INF/cgi
+
+wget http://www.java2s.com/Code/JarDownload/servlets/servlets-cgi-5.0.16.jar.zip
+sudo apt-get install unzip
+http://www.java2s.com/Code/JarDownload/servlets/servlets-ssi-5.0.16.jar.zip

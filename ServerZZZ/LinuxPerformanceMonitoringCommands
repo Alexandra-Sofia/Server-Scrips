@@ -1,0 +1,26 @@
+https://www.youtube.com/watch?v=AxtRZj01J4c
+
+uptime
+
+w
+
+top 
+	dynamically changes
+	
+sar [every x secs] [for the next y secs]
+	man sar (it has many flags)
+	
+ps -ef
+	all runnung processes
+	
+iostat
+	input-output of various machines
+	
+netstat // ss
+
+more /proc/cpuinfo
+
+iftop
+
+whois
+

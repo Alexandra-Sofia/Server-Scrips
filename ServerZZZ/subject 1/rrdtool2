@@ -1,0 +1,26 @@
+yum install rrdtool
+
+find / -name rrdtool
+
+/usr/share/
+
+find / -name *RRD*
+
+/opt/rrdtool-1.6.0/bindings/perl-shared/
+
+
+
+Perl is     : /usr/bin/perl
+MRTG files  : /etc/mrtg//*.cfg
+RRD files   : /usr/local/tomcat/current/webapps/ROOT/mrtg
+Doc root    : /usr/local/tomcat/current/webapps/ROOT/
+CGI bin     : /var/www/cgi-bin/
+Config file : /usr/local/tomcat/current/webapps/ROOT/mrtg/routers2.conf 
+Routingtable: INACTIVE
+Compact page: DISABLED
+Caching     : DISABLED
+JSCal2      : INSTALL
+'usebigk'   : no
+Auth option : NONE
+Mail Steve  : no
+

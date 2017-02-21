@@ -1,0 +1,71 @@
+#!/bin/bash
+
+clear
+AGENT="-u bootstrap -l authPriv -a MD5 -x DES -A temp_password -X temp_password 192.168.1.138"
+DEBUG=false
+#https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-an-snmp-daemon-and-client-on-ubuntu-14-04
+#snmp_command -u username -l authPriv -a MD5 -x DES -A temp_password -X temp_password remote_host snmp_sub_command_or_options
+# ex: snmpget -u bootstrap -l authPriv -a MD5 -x DES -A temp_password -X temp_password  >>	>>
+#http://www.debianadmin.com/linux-snmp-oids-for-cpumemory-and-disk-statistics.html
+
+snmpget $AGENT ssCpuRawUser.0
+echo 
+echo 
+echo 
+echo
+
+if ${DEBUG}; then
+echo "--System Description--"
+snmpget $AGENT 1.3.6.1.2.1.1.1.0
+echo "--CPU statistics--"
+echo "					-load(1 minute)"
+snmpget $AGENT 1.3.6.1.4.1.2021.4.5.0
+echo "					-percentage of user CPU time"
+snmpget $AGENT 1.3.6.1.4.1.2021.11.9.0
+echo "					-raw user cpu time"
+snmpget $AGENT 1.3.6.1.4.1.2021.11.50.0
+echo "					-percentages of system CPU time"
+snmpget $AGENT 1.3.6.1.4.1.2021.11.10.0
+echo "					-raw system cpu time"
+snmpget $AGENT .1.3.6.1.4.1.2021.11.52.0
+echo "					-percentages of idle CPU time"
+snmpget $AGENT  .1.3.6.1.4.1.2021.11.11.0
+echo "					-raw idle cpu time"
+snmpget $AGENT  .1.3.6.1.4.1.2021.11.53.0
+echo "					-raw nice cpu time"
+snmpget $AGENT  .1.3.6.1.4.1.2021.11.51.0
+echo "--Memory Statistics--"
+echo "					-Total Swap Size"
+snmpget $AGENT .1.3.6.1.4.1.2021.4.3.0
+echo "					-Available Swap Space"
+snmpget $AGENT .1.3.6.1.4.1.2021.4.4.0
+echo "					-Total RAM in machine"
+snmpget $AGENT .1.3.6.1.4.1.2021.4.5.0
+echo "					-Total RAM used"
+snmpget $AGENT .1.3.6.1.4.1.2021.4.6.0
+echo "					-Total RAM Free"
+snmpget $AGENT .1.3.6.1.4.1.2021.4.11.0
+echo "					-Total RAM Shared"
+snmpget $AGENT .1.3.6.1.4.1.2021.4.13.0
+echo "					-Total RAM Buffered"
+snmpget $AGENT .1.3.6.1.4.1.2021.4.14.0
+echo "					-Total Cached Memory"
+snmpget $AGENT .1.3.6.1.4.1.2021.4.15.0
+echo "--Disk Statistics--"
+echo "					-Path where the disk is mounted"
+snmpget $AGENT .1.3.6.1.4.1.2021.9.1.2.1
+echo "					-Path of the device for the partition"
+snmpget $AGENT .1.3.6.1.4.1.2021.9.1.3.1
+echo "					-Total size of the disk/partion (kBytes)"
+snmpget $AGENT .1.3.6.1.4.1.2021.9.1.6.1
+echo "					-Available space on the disk"
+snmpget $AGENT .1.3.6.1.4.1.2021.9.1.7.1
+echo "					-Used space on the disk"
+snmpget $AGENT .1.3.6.1.4.1.2021.9.1.8.1
+echo "					-Percentage of space used on disk"
+snmpget $AGENT .1.3.6.1.4.1.2021.9.1.9.1
+echo "					-Percentage of inodes used on disk"
+snmpget $AGENT .1.3.6.1.4.1.2021.9.1.10.1
+echo "					-System Uptime"
+snmpget $AGENT .1.3.6.1.2.1.1.3.0
+fi

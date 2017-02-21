@@ -1,0 +1,2 @@
+sudo bash
+env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
